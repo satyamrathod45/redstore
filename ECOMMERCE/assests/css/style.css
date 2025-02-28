@@ -1,0 +1,363 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: poppins, sans-serif;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style-type: none;
+
+}
+
+:root {
+  --gradient: radial-gradient(#fff, #ffd6d6);
+  --main-color: #ff5232;
+}
+
+html::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 5rem;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--gradient) !important;
+}
+section {
+  padding: 50px 100px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo img {
+  width: 150px;
+}
+.nav-list a {
+  text-decoration: none;
+  padding: 0 10px;
+  color: black;
+  text-transform: capitalize;
+  position: relative;
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.nav-list a::before {
+  content: " ";
+  position: absolute;
+  height: 2px;
+  bottom: -2px;
+  width: 0%;
+  background-color: var(--main-color);
+  transition: width 0.4s ease;
+}
+
+.nav-list a:hover {
+  color: var(--main-color);
+}
+.nav-list a:hover::before {
+  width: 80%;
+}
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--gradient);
+  height: 100vh;
+  width: 100%;
+}
+.hero-text .title h1 {
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+.hero-text .title h1 span {
+  color: var(--main-color);
+}
+.hero-text p {
+  margin: 20px 0;
+}
+
+.hero-text button {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 0.8rem;
+  background-color: transparent;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  align-items: center;
+}
+.hero-text button i {
+  margin: 0 5px;
+}
+.hero-text button:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.hero-img img {
+  width: 600px;
+}
+.heading {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.heading h2 {
+  font-size: 2rem;
+  margin: 10px;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+.heading h3 {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.card {
+  position: relative;
+  width: 15em;
+  height: 20em;
+  box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 120ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 0.5em;
+  padding-bottom: 3.4em;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+.card:hover {
+  scale: 1.1;
+}
+
+.card::after {
+  content: "Add to Cart";
+  padding-top: 1.25em;
+  padding-left: 1.25em;
+  position: absolute;
+  left: 0;
+  bottom: -60px;
+  background: var(--main-color);
+  color: #fff;
+  height: 2.5em;
+  width: 90%;
+  transition: all 80ms;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.card .title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 1.875em;
+  font-weight: 400;
+  color: #000;
+}
+
+.card .price {
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 0.625em;
+  color: #000;
+}
+
+.card:hover::after {
+  bottom: 0;
+  opacity: 1;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.text {
+  max-width: 55px;
+}
+
+.image {
+  background: rgb(241, 241, 241);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.image img {
+  width: 100%;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+.ad-banner {
+  height: 50vh;
+  background: var(--gradient);
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+}
+.ad-banner .text {
+    margin-right: 100px;
+    overflow: hidden;
+}
+.ad-banner .img img {
+  width: 300px;
+}
+.ad-banner .text h1 {
+  width: 300px;
+  font-size: 2.5rem;
+}
+.ad-banner .text p {
+  font-size: 0.8rem;
+  width: 40vw;
+}
+footer {
+position: relative;
+display: flex;
+justify-content: space-between;
+background-color: black;
+bottom: 0;
+align-items: center;
+
+padding: 50px 100px;
+height: 50vh;
+}
+.footer-logo img{
+  width: 200px;
+}
+footer .links a{
+  color: white;
+  padding: 20px;
+  margin: 20px;
+}
+.navlist-menu {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  border-radius: 1rem;
+  height: 30vh;
+  backdrop-filter: blur(100%);
+  top: -100rem;
+  width: 20vw;
+  text-align: center;
+  transition: .5s;
+}
+
+.navlist-menu a{
+  border-left: 2px solid var(--main-color);
+  color: #000;
+  margin: 10px;
+  padding: 10px;
+}
+
+
+.menu {
+  display: none;
+}
+.show {
+  top: 4rem;
+}
+
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  height: 30vh;
+}
+.footer img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+.footer .social-icons a {
+  color: white;
+  font-size: 20px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+@media (max-width:1072px) {
+  .hero-img img {
+    width: 49vw;
+  }
+  .menu {
+    display: initial;
+  }
+  .nav-list {
+    display: none;
+  }
+
+
+}
+@media (max-width:661px) {
+  .hero-img img {
+    display: none;
+  }
+
+}
+
+@media (max-width:383px) {
+  section {
+    padding: 10 px;
+    text-align: center;
+  }
+  .hero-text .title h1{
+    font-size: 2rem;
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0.5;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+
+
+
+
+
+
